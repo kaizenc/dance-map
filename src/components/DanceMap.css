@@ -1,0 +1,53 @@
+.dance-map-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--map-bg, #f9f9f9);
+}
+
+.dance-map {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.dance-map svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Smooth transition for map panning and zooming */
+.dance-map svg > g {
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-marker {
+  transition: filter 0.2s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.custom-marker:hover,
+.custom-marker.top-marker {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.marker-tooltip {
+  position: fixed;
+  background: var(--tooltip-bg, white);
+  padding: 8px 12px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: 1000;
+  text-align: center;
+  font-family: var(--font-primary, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif);
+  font-size: 0.9rem;
+}
+
+.marker-tooltip strong {
+  font-size: 1.1rem;
+  color: var(--tooltip-text, #2c3e50);
+}
