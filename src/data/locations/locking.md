@@ -2,7 +2,7 @@
 id: 1
 city: Los Angeles
 state: California
-coordinates: [34.0522, -118.2437]
+coordinates: [33.9850, -118.3089]
 danceStyle: Locking
 type: dance
 year: 1970

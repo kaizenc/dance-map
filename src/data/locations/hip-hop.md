@@ -2,7 +2,7 @@
 id: 10
 city: Bronx
 state: New York
-coordinates: [40.8448, -73.8648]
+coordinates: [40.8506, -73.9307]
 danceStyle: Hip Hop
 type: dance
 year: 1970

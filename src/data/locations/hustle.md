@@ -2,7 +2,7 @@
 id: 8
 city: Bronx
 state: New York
-coordinates: [40.8448, -73.8648]
+coordinates: [40.8206, -73.9190]
 danceStyle: Hustle
 type: dance
 year: 1970

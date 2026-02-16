@@ -1,6 +1,6 @@
 # Dance Map
 
-React 19 + Vite 7 app showing dance and music history across America on an interactive map. Uses `@vnedyalk0v/react19-simple-maps` for map rendering.
+React 19 + Vite 7 app showing dance and music history across America on an interactive map. Uses `react-leaflet` for map rendering with OpenStreetMap tiles.
 
 ## Commands
 
@@ -26,8 +26,6 @@ src/
     parseFrontmatter.js — custom YAML frontmatter parser (no dependencies)
     parseLocationBody.js — extracts Description/Music/Notable Figures from markdown body
   theme.config.js      — centralized theme (colors, fonts, pin colors)
-  assets/
-    us-states.json     — GeoJSON for US state boundaries
 ```
 
 ## Data flow
@@ -51,6 +49,17 @@ Each markdown file produces an object with these fields:
 - `relatedLocationId` (number, optional) — links to another location
 
 Pin colors are derived from `type` via `theme.config.js`, not stored on the data.
+
+## Map Implementation
+
+The map uses Leaflet with OpenStreetMap tiles for smooth panning and zooming:
+
+- Custom teardrop markers created using L.divIcon with inline SVG
+- Automatic pan/zoom to selected location with offset on large screens (to account for modal)
+- Responsive behavior that re-centers map when screen size changes
+- Hover tooltips follow cursor position
+- Markers are greyed out when filtered by decade
+- Built-in zoom controls and smooth flyTo animations
 
 ## Conventions
 

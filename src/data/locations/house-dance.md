@@ -2,7 +2,7 @@
 id: 2
 city: New York City
 state: New York
-coordinates: [40.7128, -74.0060]
+coordinates: [40.7282, -73.9942]
 danceStyle: House
 type: dance
 year: 1980

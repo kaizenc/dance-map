@@ -1,8 +1,8 @@
 ---
 id: 24
-city: New Orleans
+city: Baton Rouge
 state: Louisiana
-coordinates: [29.9511, -90.0715]
+coordinates: [30.4583, -91.1403]
 danceStyle: Louisiana Jigging
 type: dance
 year: 3000

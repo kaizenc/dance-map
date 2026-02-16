@@ -2,7 +2,7 @@
 id: 19
 city: Harlem
 state: New York
-coordinates: [40.8116, -73.9465]
+coordinates: [40.8099, -73.9442]
 danceStyle: Lindy Hop
 type: dance
 year: 1928

@@ -2,7 +2,7 @@
 id: 15
 city: Brooklyn
 state: New York
-coordinates: [40.6782, -73.9442]
+coordinates: [40.6665, -73.9197]
 danceStyle: FlexN
 type: dance
 year: 2010

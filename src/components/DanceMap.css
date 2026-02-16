@@ -10,28 +10,72 @@
   width: 100%;
   height: 100%;
   display: block;
+  z-index: 0;
 }
 
-.dance-map svg {
+/* Leaflet container styling */
+.leaflet-container {
   width: 100%;
   height: 100%;
+  background-color: var(--map-bg, #f9f9f9);
 }
 
-/* Smooth transition for map panning and zooming */
-.dance-map svg > g {
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
+/* Custom marker styling */
 .custom-marker {
+  background: none;
+  border: none;
   transition: filter 0.2s ease;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  cursor: pointer;
 }
 
-.custom-marker:hover,
-.custom-marker.top-marker {
+.custom-marker:hover {
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  z-index: 1000 !important;
 }
 
+.custom-marker.selected {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+  z-index: 999 !important;
+}
+
+/* Leaflet popup styling */
+.leaflet-popup-content-wrapper {
+  background: var(--tooltip-bg, white);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-family: var(
+    --font-primary,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif
+  );
+}
+
+.leaflet-popup-tip {
+  background: var(--tooltip-bg, white);
+}
+
+.marker-popup {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--tooltip-text, #2c3e50);
+}
+
+.marker-popup strong {
+  font-size: 1.1rem;
+  color: var(--tooltip-text, #2c3e50);
+}
+
+/* Tooltip for hover (not popup) */
 .marker-tooltip {
   position: fixed;
   background: var(--tooltip-bg, white);
@@ -41,13 +85,34 @@
   pointer-events: none;
   z-index: 1000;
   text-align: center;
-  font-family: var(--font-primary, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif);
+  font-family: var(
+    --font-primary,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif
+  );
   font-size: 0.9rem;
 }
 
 .marker-tooltip strong {
   font-size: 1.1rem;
   color: var(--tooltip-text, #2c3e50);
+}
+
+/* Ensure zoom controls are visible */
+.leaflet-control-zoom {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Make tile layer load smoothly */
+.leaflet-tile-container {
+  transition: opacity 0.2s;
 }

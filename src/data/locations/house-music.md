@@ -2,7 +2,7 @@
 id: 3
 city: Chicago
 state: Illinois
-coordinates: [41.8781, -87.6298]
+coordinates: [41.8756, -87.6425]
 danceStyle: House Music
 type: music
 year: 1980

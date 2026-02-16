@@ -2,7 +2,7 @@
 id: 11
 city: Harlem
 state: New York
-coordinates: [40.8116, -73.9465]
+coordinates: [40.8075, -73.9454]
 danceStyle: Voguing
 type: dance
 year: 1980

@@ -2,7 +2,7 @@
 id: 14
 city: Chicago
 state: Illinois
-coordinates: [41.8781, -87.6298]
+coordinates: [41.7493, -87.6298]
 danceStyle: Footwork
 type: dance
 year: 2000

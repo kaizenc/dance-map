@@ -119,8 +119,7 @@ function App() {
       <header className="app-header">
         <div className="header-content">
           <div className="header-text">
-            <h1>Dance History Across America</h1>
-            <p>Click on the map pins to explore different dance forms</p>
+            <h1>Dance Across America</h1>
           </div>
           <button
             className="timeline-button"

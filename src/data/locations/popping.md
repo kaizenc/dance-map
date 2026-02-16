@@ -1,8 +1,8 @@
 ---
 id: 12
-city: Los Angeles
+city: Fresno
 state: California
-coordinates: [34.0522, -118.2437]
+coordinates: [36.7378, -119.7871]
 danceStyle: Popping
 type: dance
 year: 1970

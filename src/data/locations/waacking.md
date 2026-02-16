@@ -2,7 +2,7 @@
 id: 4
 city: Los Angeles
 state: California
-coordinates: [34.0522, -118.2437]
+coordinates: [34.0900, -118.3617]
 danceStyle: Waacking
 type: dance
 year: 1970

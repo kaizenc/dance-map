@@ -2,7 +2,7 @@
 id: 18
 city: Miami
 state: Florida
-coordinates: [25.7617, -80.1918]
+coordinates: [25.8427, -80.2204]
 danceStyle: Wham
 type: dance
 year: 2010

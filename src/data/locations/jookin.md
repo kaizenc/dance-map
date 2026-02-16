@@ -2,7 +2,7 @@
 id: 16
 city: Memphis
 state: Tennessee
-coordinates: [35.1495, -90.0490]
+coordinates: [35.0867, -90.0562]
 danceStyle: Jookin
 type: dance
 year: 1980

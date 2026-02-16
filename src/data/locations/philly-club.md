@@ -2,7 +2,7 @@
 id: 7
 city: Philadelphia
 state: Pennsylvania
-coordinates: [39.9526, -75.1652]
+coordinates: [39.9812, -75.1547]
 danceStyle: Philly Club
 type: dance
 year: 2000

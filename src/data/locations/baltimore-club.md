@@ -2,7 +2,7 @@
 id: 6
 city: Baltimore
 state: Maryland
-coordinates: [39.2904, -76.6122]
+coordinates: [39.3093, -76.6099]
 danceStyle: Baltimore Club
 type: dance
 year: 1990

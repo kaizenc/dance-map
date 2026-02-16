@@ -10,7 +10,7 @@ const locationFiles = import.meta.glob('./locations/*.md', {
 
 function addJitter(lat, lng, index = 0, total = 1) {
   if (total === 1) return [lat, lng];
-  const jitterAmount = 0.08;
+  const jitterAmount = 0.006;
   const angle = (index / total) * 2 * Math.PI;
   const radius = jitterAmount * (1 + Math.floor(index / 8) * 0.5);
   return [

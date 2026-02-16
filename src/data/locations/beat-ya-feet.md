@@ -2,7 +2,7 @@
 id: 22
 city: Washington D.C.
 state: Washington D.C.
-coordinates: [38.8951, -77.0364]
+coordinates: [38.8679, -76.9910]
 danceStyle: Beat Ya Feet
 type: dance
 year: 1992

@@ -2,7 +2,7 @@
 id: 5
 city: Newark
 state: New Jersey
-coordinates: [40.7357, -74.1724]
+coordinates: [40.7242, -74.1726]
 danceStyle: Jersey Club
 type: dance
 year: 2010

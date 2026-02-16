@@ -2,7 +2,7 @@
 id: 17
 city: Atlanta
 state: Georgia
-coordinates: [33.7490, -84.3880]
+coordinates: [33.7357, -84.4484]
 danceStyle: Yeek
 type: dance
 year: 2010
