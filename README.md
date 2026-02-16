@@ -6,7 +6,8 @@ An interactive map showcasing the history and evolution of dance forms throughou
 
 - **Interactive Map**: Explore dance locations across the US with clickable pins
 - **Detailed Information Cards**: Learn about each dance form, its music origins, and notable figures
-- **Easy Data Management**: Simple JavaScript data structure to add new dance locations
+- **Timeline Filter**: Filter locations by decade to see how dance evolved over time
+- **Easy Data Management**: Each location is a standalone Markdown file, editable in any text editor
 - **Responsive Design**: Clean, modern interface with smooth animations
 
 ## Getting Started
@@ -33,50 +34,41 @@ An interactive map showcasing the history and evolution of dance forms throughou
 
 ## Adding New Locations
 
-### Adding Dance Forms
+Location data is stored as Markdown files in `src/data/locations/`. Each file has YAML frontmatter for structured fields and markdown body sections for prose content.
 
-To add a new dance form, edit `src/data/danceLocations.js` (red pins by default):
+To add a new location, create a `.md` file in `src/data/locations/`:
 
-```javascript
-{
-  id: 3, // Increment the ID
-  city: "City Name",
-  state: "State Name",
-  coordinates: [latitude, longitude], // Get from Google Maps
-  danceStyle: "Dance Form Name",
-  type: "dance",
-  pinColor: "red", // Default for dance, or specify custom color
-  description: "Description of the dance form...",
-  music: "Information about the music...",
-  notableFigures: [
-    "Figure 1 - Description",
-    "Figure 2 - Description",
-    // Add more figures
-  ]
-}
+```markdown
+---
+id: 26
+city: City Name
+state: State Name
+coordinates: [latitude, longitude]
+danceStyle: Dance Form Name
+type: dance
+year: 1990
+---
+
+## Description
+
+Description of the dance form...
+
+## Music
+
+Information about the music...
+
+## Notable Figures
+
+- Figure 1 - Description
+- Figure 2 - Description
 ```
 
-### Adding Music Origins
-
-To add a music origin, edit `src/data/musicLocations.js` (blue pins by default):
-
-```javascript
-{
-  id: 4, // Increment the ID
-  city: "City Name",
-  state: "State Name",
-  coordinates: [latitude, longitude],
-  danceStyle: "Music Genre Name",
-  type: "music",
-  pinColor: "blue", // Default for music, or specify custom color
-  description: "Description of the music genre...",
-  music: "Information about the musical characteristics...",
-  notableFigures: [
-    "Figure 1 - Description",
-    // Add more figures
-  ]
-}
-```
+**Fields:**
+- `id` — unique number
+- `type` — `"dance"` (red pins) or `"music"` (blue pins)
+- `year` — decade/year of origin (used by timeline filter)
+- `relatedLocationId` — optional, links to another location's id
+- `coordinates` — use the true city coordinates; pins in the same city are automatically offset to avoid overlap
 
 ## Project Structure
 
@@ -84,34 +76,33 @@ To add a music origin, edit `src/data/musicLocations.js` (blue pins by default):
 dance-map/
 ├── src/
 │   ├── components/
-│   │   ├── DanceMap.jsx       # Interactive map component
-│   │   ├── DanceMap.css
-│   │   ├── DanceCard.jsx      # Information card component
-│   │   ├── DanceCard.css
-│   │   ├── IntroModal.jsx     # Welcome modal
-│   │   └── IntroModal.css
+│   │   ├── DanceMap.jsx         # Interactive map with pins
+│   │   ├── DanceCard.jsx        # Location info card
+│   │   ├── DecadeSlider.jsx     # Timeline filter UI
+│   │   └── IntroModal.jsx       # Welcome modal
 │   ├── data/
-│   │   ├── danceLocations.js  # Dance form locations (red pins)
-│   │   └── musicLocations.js  # Music origin locations (blue pins)
-│   ├── App.jsx                # Main application component
-│   ├── App.css
+│   │   ├── locations/*.md       # One markdown file per location
+│   │   ├── loadLocations.js     # Loads and parses all location files
+│   │   ├── parseFrontmatter.js  # YAML frontmatter parser
+│   │   └── parseLocationBody.js # Markdown body section parser
+│   ├── assets/
+│   │   └── us-states.json       # GeoJSON for US state boundaries
+│   ├── theme.config.js          # Centralized theme configuration
+│   ├── App.jsx                  # Main application component
 │   └── main.jsx
 └── package.json
 ```
 
 ## Technologies Used
 
-- **React** - UI framework
-- **Vite** - Build tool and development server
-- **Leaflet** - Interactive map library
-- **React-Leaflet** - React components for Leaflet
-- **OpenStreetMap** - Map tiles
+- **React 19** — UI framework
+- **Vite** — Build tool and development server
+- **react19-simple-maps** — React components for SVG map rendering
 
 ## Future Enhancements
 
 - Add more dance forms from different cities
 - Include video examples of each dance form
-- Add timeline feature to show dance evolution
 - Search and filter functionality
 - Mobile-optimized touch interactions
 

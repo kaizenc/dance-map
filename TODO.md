@@ -1,0 +1,8 @@
+- [ ] Move music to its own folder in data
+- [ ] Rework the map entirely
+  - [ ] Zoom is not smooth at all; a change in zoom level re-renders the lines and sizes of the map icons
+  - [ ] Would prefer not depending on an svg of state outlines and having a view that has a more detailed map the further zoomed in you are.
+- [ ] Add a smooth zoom on clicking a location
+- [ ] Support multiple views of the same data (map, timeline/tree, index, alphabetical)
+- [ ] Remove the current timeline feature
+- [ ] Redesign the webpage
